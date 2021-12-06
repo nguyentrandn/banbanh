@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    -webkit-user-select: none; /*không cho người dùng bôi đen dòng*/
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    /* font-size: 25px; */
+}
+.sedebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100px;
+    background: rgb(5, 5, 19);
+    padding: 15px 35px 15px 15px;
+    transition: all 0.5s ease;
+}
+.sedebar.active{
+    width: 250px;
+}
+.sedebar .logo_conten .logo{
+    color: aliceblue;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+.sedebar.active .logo_conten .logo{
+    opacity: 1;
+    pointer-events: auto;
+}
+.logo_conten .logo i{
+    font-size: 24px;
+    margin-right: 5px;
+}
+.logo_conten .logo .logo_name{
+    font-size: 15px;
+    font-weight: 500;
+}
+.sedebar #btn{
+    position: absolute;
+    color: ivory;
+    left: 45%;
+    top: 10px;
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+.sedebar.active #btn{
+     left: 85%;
+}
+.sedebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 20px 5px;
+    list-style: none;
+    line-height: 50px;
+}
+.sedebar ul li .tooltip{
+    position: absolute;
+    left: 145px;
+    top: 0;
+    transform: translate(-50% , -50%);
+    border-radius: 6px;
+    line-height: 35px;
+    text-align: center;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(49, 13, 83, 0.424);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+.sedebar.active ul li .tooltip{
+    display: none;
+}
+.sedebar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    top: 50%;
+    opacity: 1;
+    
+}
+.sedebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background: rgb(33, 29, 58);
+    padding-left: 50px;
+    /* padding-right: 10px; */
+    font-size: 20px;
+    color: mintcream;
+}
+.sedebar ul li .bx-search-alt{
+    position: absolute;
+    z-index: 99;
+    color: mintcream;
+    font-size: 20px;
+    transition: all 0.5s ease;
+   
+}
+.sedebar ul li .bx-search-alt:hover{
+    color: #1d1b31;
+    background: #fff;
+}
+.sedebar ul li a{
+    color: ivory;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 10px;
+    white-space: nowrap;
+     
+}
+.sedebar ul li a:hover{
+    color: rgb(0, 0, 0);
+    background: mintcream;
+   
+}
+
+.sedebar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+.sedebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+.sedebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile_content .profile{
+    position: absolute;
+    color: mintcream;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    background: rgba(49, 13, 83, 0.424);
+    height: 55px;
+    /* opacity: 0; */
+    pointer-events: none;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+}
+.sedebar.active .profile{
+    /* opacity: 1; */
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+.profile #log_out{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    color: #fff;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+.sedebar.active .profile #log_out{
+    left: 88%;
+    
+}
+.home_content{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 100px;
+    transition: all 0.5s ease;
+}
+.home_content .text{
+    font-size: 25px;
+    margin: 15px;
+    color: navy;
+}
+.sedebar.active ~ .home_content{
+    width: calc(100% - 240px);
+    left: 240px;
+}
